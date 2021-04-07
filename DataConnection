@@ -1,0 +1,18 @@
+<?php
+$Host_Name="localhost";
+$Host_User="root";
+$Host_Pass="";
+$Host_DbName="volly";
+$conn= mysqli_connect($Host_Name,$Host_User,$Host_Pass,$Host_DbName);
+$Insert_name=$_Post['name'];
+$Insert_email=$_Post['email'];
+$sql="INSERT INTO `volly_table`(`Name`,`Email`) VALUES ('$Insert_name','$Insert_email')";
+$run=mysqli_query($conn,$sql);
+if($run=true){
+	echo "Data Insert Successfully";
+}
+else{
+	echo "Data Insert Fail";
+}
+mysqli_close($conn);
+?>
